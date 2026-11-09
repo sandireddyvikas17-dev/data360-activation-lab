@@ -1,0 +1,7 @@
+order_id,web_customer_id,order_date,plan_sku,amount,order_status
+O5001,W1001,2025-03-14,VR-ANNUAL,240.00,completed
+O5002,W1001,2026-03-14,VR-ANNUAL,240.00,completed
+O5003,W1002,2026-09-30,VR-MONTHLY,25.00,completed
+O5004,W1003,2026-01-11,VR-MONTHLY,25.00,completed
+O5005,W1005,2026-10-02,VR-ANNUAL,240.00,completed
+O5006,W1004,2026-08-15,VR-MONTHLY,25.00,completed

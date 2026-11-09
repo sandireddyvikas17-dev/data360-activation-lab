@@ -1,0 +1,6 @@
+web_customer_id,first_name,last_name,email,phone,created_at
+W1001,Ana,Sharma,ana.sharma@example.com,+1 415 555 0101,2025-03-14
+W1002,Marcus,Lee,marcus.lee@example.com,+1 628 555 0102,2025-05-02
+W1003,Priya,Nair,priya.nair@example.com,+1 408 555 0103,2025-06-19
+W1004,Jordan,Ellis,household.shared@example.com,+1 917 555 0104,2025-07-08
+W1005,Sofia,Reyes,sofia.reyes@example.com,+1 510 555 0105,2025-08-21
