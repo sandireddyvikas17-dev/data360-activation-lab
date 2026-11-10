@@ -28,7 +28,7 @@ This lab fixes the order: **ingest cleanly, resolve identity with explicit rules
 | Day | Focus | Artefacts |
 |---|---|---|
 | **Day 1 — Ingest & unify** | Sources, DLO/DMO mapping, identity resolution, consent model | This README, `data-model/`, `samples/`, `identity/`, `consent/` |
-| Day 2 — Insights & segments | Calculated Insights, segment definitions, SFMC-side mirror SQL | `insights/`, `segments/` |
+| **Day 2 — Insights & segments** | Calculated Insights, segment definitions, SFMC-side mirror SQL | `insights/`, `segments/`, `sfmc-mirror/` |
 | Day 3 — Activate & measure | Activation to SFMC, Journey entry, suppression check, reporting spec | `activation/`, `reporting/` |
 
 ## Architecture (target state)
@@ -55,6 +55,9 @@ Email list (CSV) ──┘                                          │
 | `samples/` | Clearly fictional sample source files (CSV / JSON) |
 | `identity/` | Identity-resolution ruleset: match keys, precedence, survivorship |
 | `consent/` | Consent model: how consent is stored, merged, and enforced |
+| `insights/` | Calculated Insights (Day 2): lifetime orders, days since last activity, engagement tier |
+| `segments/` | Segment definitions with entry/exit rules (Day 2), incl. Lapsing Subscriber |
+| `sfmc-mirror/` | Automation Studio SQL mirroring the lapsing segment for Engagement-only audiences (Day 2) |
 | `docs/` | Build log — one entry per day |
 
 ## Principles used throughout
@@ -67,4 +70,4 @@ Email list (CSV) ──┘                                          │
 
 ## Status
 
-Day 1 — see `docs/BUILD_LOG.md`.
+Day 2 complete — see `docs/BUILD_LOG.md`. Day 3 (activation + reporting) is the final build day.
