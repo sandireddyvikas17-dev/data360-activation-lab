@@ -16,3 +16,15 @@ Personal portfolio build for the fictional brand VitalRoute Wellness. Not employ
 - `consent/consent-model.md` — per-channel consent on the Unified Individual, merge rules (newest explicit wins; unsubscribe protected; unknown never activates), enforcement points for Days 2–3
 
 **Next:** Day 2 — Calculated Insights (lifetime orders, days since last activity, engagement tier), segment definitions, and the SFMC-side mirror SQL.
+
+## Day 2 — 2026-11-10 — Insights & segments
+
+**Built:**
+- `insights/README.md` — the framing ("a calculated insight is just a business question written in SQL"), grain/refresh rules, and the shared rules (completed orders only; activity = any source; no activity stays NULL)
+- `insights/01-lifetime-orders.sql` — Calculated Insight: lifetime completed orders + value + first/last order date per Unified Individual, with a hand-checked worked table against the sample orders
+- `insights/02-days-since-last-activity.sql` — Calculated Insight: latest activity across orders + engagement (the Day 1 survivorship rule as SQL), days-since with explicit NULL handling; worked table evaluated 2026-11-10 (Ana 5, Marcus 13, Sofia 39, Jordan 87, Priya 303, Tara NULL)
+- `insights/03-engagement-tier.sql` — Calculated Insight layered over Insights 01–02: Active ≤30 / Cooling 31–60 / Lapsing 61–90 / Lapsed 91+ / No recorded activity; sample data lands in five different tiers
+- `segments/segment-definitions.md` — four segments with entry/exit rules and the universal consent gates: **Lapsing Subscriber** (61–90 days, ≥1 order, not cancelled — sample check: Jordan Ellis qualifies on activity but is held out by the shared-inbox gate, so zero sendable members is the correct result), Lapsed Subscriber, Active Loyal, New Subscriber — No Purchase Yet
+- `sfmc-mirror/automation-studio-lapsing-mirror.sql` + `sfmc-mirror/README.md` — the same lapsing logic as an Automation Studio T-SQL query over SFMC Data Extensions for Engagement-only audiences, with its limits stated plainly (SubscriberKey vs Unified Individual, SFMC-side consent only, sync-dependent activity) and QA parity checks
+
+**Next:** Day 3 — activation target spec + activated DE schema, Journey Builder entry design, suppression/consent check, MCI-style reporting spec, and the wrap-up.
